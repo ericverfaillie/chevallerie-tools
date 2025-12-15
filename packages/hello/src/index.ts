@@ -8,6 +8,8 @@ function formatDate(date: Date): string {
   return date.toLocaleDateString("fr-FR");
 }
 
+
+
 function main(): void {
   const title = "Manoir de la Chevallerie";
   const today = new Date();

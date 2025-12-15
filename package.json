@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hello": "ts-node packages/hello/src/index.ts"
+    "hello": "ts-node packages/hello/src/index.ts",
+    "blog-utils": "ts-node packages/blog-utils/src/index.ts"
   },
   "keywords": [],
   "author": "",
