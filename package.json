@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "hello": "ts-node packages/hello/src/index.ts",
     "blog-utils": "ts-node packages/blog-utils/src/index.ts",
-    "test:blog-utils": "ts-node packages/blog-utils/src/formatEventTitle.test.ts"
+    "test:blog-utils": "ts-node packages/blog-utils/src/formatEventTitle.test.ts",
+    "markdown-utils": "ts-node packages/markdown-utils/src/index.ts",
+    "test:markdown-utils": "ts-node packages/markdown-utils/src/generateFrontMatter.test.ts"
   },
   "keywords": [],
   "author": "",
