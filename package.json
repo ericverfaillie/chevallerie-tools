@@ -11,7 +11,8 @@
     "markdown-utils": "ts-node packages/markdown-utils/src/index.ts",
     "test:markdown-utils": "ts-node packages/markdown-utils/src/generateFrontMatter.test.ts",
     "test:slugify": "ts-node packages/markdown-utils/src/slugify.test.ts",
-    "post:new": "ts-node packages/markdown-utils/src/index.ts"
+    "post:new": "ts-node packages/markdown-utils/src/cli.ts",
+    "post:oldnew": "ts-node packages/markdown-utils/src/index.ts"
   },
   "keywords": [],
   "author": "",

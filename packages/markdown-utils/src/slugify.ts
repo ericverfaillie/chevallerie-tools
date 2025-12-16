@@ -1,3 +1,4 @@
+//Votre slugify est déjà solide, mais vous pouvez ajouter une règle métier : longueur max (ex. 80) et rejet si trop court.
 export function slugify(input: string): string {
   const s = input
     .trim()
