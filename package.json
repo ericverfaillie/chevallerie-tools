@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "hello": "ts-node packages/hello/src/index.ts",
-    "blog-utils": "ts-node packages/blog-utils/src/index.ts"
+    "blog-utils": "ts-node packages/blog-utils/src/index.ts",
+    "test:blog-utils": "ts-node packages/blog-utils/src/formatEventTitle.test.ts"
   },
   "keywords": [],
   "author": "",
