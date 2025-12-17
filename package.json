@@ -12,7 +12,8 @@
     "test:markdown-utils": "ts-node packages/markdown-utils/src/generateFrontMatter.test.ts",
     "test:slugify": "ts-node packages/markdown-utils/src/slugify.test.ts",
     "post:new": "ts-node packages/markdown-utils/src/cli.ts",
-    "post:oldnew": "ts-node packages/markdown-utils/src/index.ts"
+    "post:oldnew": "ts-node packages/markdown-utils/src/index.ts",
+    "build:crowdfunding": "tsc -p packages/crowdfunding-web/tsconfig.json"
   },
   "keywords": [],
   "author": "",
