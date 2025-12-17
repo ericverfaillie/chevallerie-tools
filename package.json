@@ -14,7 +14,10 @@
     "post:new": "ts-node packages/markdown-utils/src/cli.ts",
     "post:oldnew": "ts-node packages/markdown-utils/src/index.ts",
     "build:crowdfunding": "tsc -p packages/crowdfunding-web/tsconfig.json",
-    "build:site": "npm run build:crowdfunding && node scripts/build-site.mjs"
+    "site:crowdfunding": "npm run build:crowdfunding && node scripts/build-site.mjs",
+    "build:visit": "tsc -p packages/interactive-visit/tsconfig.json",
+    "site:visit": "npm run build:visit && node scripts/build-site.mjs interactive-visit",
+    "pages:build": "npm run site:crowdfunding && npm run site:visit && node scripts/build-pages.mjs"
   },
   "keywords": [],
   "author": "",
