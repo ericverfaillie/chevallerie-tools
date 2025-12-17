@@ -1,13 +1,6 @@
 import { mkdir, rm, cp, stat } from "node:fs/promises";
 import path from "node:path";
 
-const root = process.cwd();
-const pkg = path.join(root, "packages", "crowdfunding-web");
-
-const publicDir = path.join(pkg, "public");
-const distDir = path.join(pkg, "dist");
-const siteDir = path.join(pkg, "site");
-
 /**
  * Vérifie si un chemin existe
  */
@@ -20,30 +13,35 @@ async function exists(p) {
   }
 }
 
-console.log("📦 Building crowdfunding site…");
+const pkgName = process.argv[2];
+if (!pkgName)
+  throw new Error("Usage: node scripts/build-site.mjs <package-name>");
+/**
+ * Vérifie si un chemin existe
+ */
 
-/* 1. Nettoyage du dossier site (si présent) */
-if (await exists(siteDir)) {
-  console.log("🧹 Cleaning existing site directory");
-  await rm(siteDir, { recursive: true, force: true });
-}
+const root = process.cwd();
+const pkgDir = path.join(root, "packages", pkgName);
 
-/* 2. Création du dossier site */
+const publicDir = path.join(pkgDir, "public");
+const distDir = path.join(pkgDir, "dist");
+const siteDir = path.join(pkgDir, "site");
+
+console.log(`📦 Building package site: ${pkgName}`);
+
+if (!(await exists(pkgDir))) throw new Error(`Package not found: ${pkgDir}`);
+if (!(await exists(publicDir)))
+  throw new Error(`Missing public/: ${publicDir}`);
+if (!(await exists(distDir)))
+  throw new Error(`Missing dist/. Run tsc first for ${pkgName}.`);
+
+await rm(siteDir, { recursive: true, force: true });
 await mkdir(siteDir, { recursive: true });
-
-/* 3. Vérifications de sécurité */
-if (!(await exists(publicDir))) {
-  throw new Error(`Public directory not found: ${publicDir}`);
-}
-if (!(await exists(distDir))) {
-  throw new Error(`Dist directory not found. Did you run TypeScript build?`);
-}
 
 /* 4. Copie des fichiers */
 console.log("📁 Copying public assets");
 await cp(publicDir, siteDir, { recursive: true });
-
 console.log("📁 Copying compiled TypeScript");
 await cp(distDir, path.join(siteDir, "dist"), { recursive: true });
 
-console.log("✅ Site assembled successfully at:", siteDir);
+console.log(`✅ Assembled: ${siteDir}`);
