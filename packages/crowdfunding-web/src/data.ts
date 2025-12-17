@@ -32,7 +32,7 @@ export const project: FundingProject = {
     ],
     keyFacts: [
       "Localisation : Sarthe",
-      "Période principale : XVIe siècle",
+      "Période principale : XVe siècle",
       "Statut : monument privé à caractère patrimonial",
     ],
   },
