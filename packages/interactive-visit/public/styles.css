@@ -117,3 +117,29 @@ body {
 .small {
   font-size: 12px;
 }
+
+.image-stage {
+  position: relative;
+}
+
+.hotspot {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 2px solid rgba(156, 216, 15, 0.95);
+  background: var(--accent);
+  color: #f51515;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.hotspot:focus {
+  outline: 3px solid rgba(238, 43, 163, 0.35);
+  outline-offset: 2px;
+}

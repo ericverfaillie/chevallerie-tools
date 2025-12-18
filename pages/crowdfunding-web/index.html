@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id="page-title">
+      Exercice en cours - page en construction - Collecte — Manoir de la
+      Chevallerie
+    </title>
+    <meta
+      id="page-desc"
+      name="description"
+      content="Exercice en cours - page en construction - Collecte patrimoniale — Manoir de la Chevallerie."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!-- Header sticky -->
+    <header class="site-header">
+      <div class="container header-bar">
+        <div class="brand">
+          <div class="brand__title" id="brand-title">
+            Manoir de la Chevallerie
+          </div>
+          <div class="brand__subtitle" id="brand-subtitle">
+            Collecte patrimoniale
+          </div>
+        </div>
+        <a class="btn btn-primary" id="cta-top" href="#contribuer"
+          >Faire un don</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- LE MONUMENT -->
+      <section class="section" id="le-monument">
+        <div class="container">
+          <h2>Le monument</h2>
+          <div class="two-cols">
+            <div>
+              <p class="body-text" id="monument-text"></p>
+              <ul class="bullets" id="monument-facts"></ul>
+            </div>
+            <div class="aside">
+              <div class="aside-card">
+                <div class="aside-title">Repères</div>
+                <ul class="mini-list" id="monument-keyfacts"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <div class="badge" id="status-badge">Campagne en cours</div>
+            <h1 class="hero-title" id="title"></h1>
+            <p class="hero-lead" id="objective"></p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contribuer">Contribuer</a>
+              <a class="btn btn-secondary" href="#chiffres"
+                >Voir les chiffres</a
+              >
+            </div>
+
+            <p class="muted small" id="hero-note"></p>
+          </div>
+
+          <figure class="hero-media">
+            <img
+              class="hero-image"
+              id="hero-image"
+              src="./assets/hero.jpg"
+              alt=""
+            />
+            <figcaption class="caption" id="hero-caption"></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- LES TRAVAUX -->
+      <section class="section section-alt" id="les-travaux">
+        <div class="container">
+          <h2>Les travaux</h2>
+          <div class="two-cols">
+            <div>
+              <p class="body-text" id="works-text"></p>
+              <ul class="bullets" id="works-points"></ul>
+            </div>
+            <div class="aside">
+              <div class="aside-card">
+                <div class="aside-title">Méthode</div>
+                <p class="muted" id="works-method"></p>
+                <div class="aside-title" style="margin-top: 12px">
+                  Transparence
+                </div>
+                <p class="muted" id="works-transparency"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHIFFRES -->
+      <section class="section" id="chiffres">
+        <div class="container">
+          <h2>Chiffres</h2>
+          <div class="card">
+            <div class="kpis">
+              <div class="kpi">
+                <div class="kpi__label">Collecté</div>
+                <div class="kpi__value" id="kpi-collected">—</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi__label">Objectif</div>
+                <div class="kpi__value" id="kpi-objective">—</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi__label">Avancement</div>
+                <div class="kpi__value" id="percent">—</div>
+              </div>
+            </div>
+
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div id="progress-bar" class="progress__bar"></div>
+            </div>
+
+            <div class="card-row">
+              <p id="remaining" class="muted"></p>
+              <p id="next-goal" class="next-goal"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PALIERS -->
+      <section class="section section-alt" id="paliers">
+        <div class="container">
+          <h2>Paliers</h2>
+          <p class="muted">
+            Chaque palier correspond à une étape concrète du chantier. Le
+            prochain palier est mis en évidence.
+          </p>
+          <ul id="milestones" class="milestones"></ul>
+        </div>
+      </section>
+
+      <!-- CONTREPARTIES -->
+      <section class="section" id="contreparties">
+        <div class="container">
+          <h2>Contreparties</h2>
+          <div class="card">
+            <p class="body-text" id="rewards-text"></p>
+            <ul class="rewards" id="rewards-list"></ul>
+            <p class="muted small" id="rewards-footnote"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SUIVI -->
+      <section class="section section-alt" id="suivi">
+        <div class="container">
+          <h2>Suivi</h2>
+          <div class="card">
+            <p class="body-text" id="followup-text"></p>
+            <ul class="links" id="followup-links"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTRIBUER -->
+      <section class="section" id="contribuer">
+        <div class="container">
+          <h2>Contribuer</h2>
+          <div class="card">
+            <p class="body-text" id="contribute-text"></p>
+            <div class="cta-box">
+              <a
+                id="cta-main"
+                class="btn btn-primary btn-wide"
+                href="#"
+                target="_blank"
+                rel="noopener"
+              >
+                Faire un don
+              </a>
+              <a id="cta-share" class="btn btn-secondary btn-wide" href="#">
+                Partager cette page
+              </a>
+              <p class="muted small" id="cta-footnote"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ILS NOUS SOUTIENNENT -->
+      <section class="section section-alt" id="ils-nous-soutiennent">
+        <div class="container">
+          <h2>Ils nous soutiennent</h2>
+          <div class="card">
+            <p class="body-text" id="supporters-text"></p>
+            <ul class="supporters" id="supporters-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-title" id="footer-title">
+            Manoir de la Chevallerie
+          </div>
+          <p class="muted small" id="footer-text"></p>
+        </div>
+        <div class="footer-links">
+          <a href="#le-monument">Monument</a>
+          <a href="#les-travaux">Travaux</a>
+          <a href="#chiffres">Chiffres</a>
+          <a href="#paliers">Paliers</a>
+          <a href="#contribuer">Don</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./dist/main.js"></script>
+  </body>
+</html>

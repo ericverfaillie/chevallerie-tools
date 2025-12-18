@@ -1,0 +1,145 @@
+:root {
+  --bg: #f7f6f4;
+  --panel: #ffffff;
+  --ink: #1b1f2a;
+  --muted: #5b6472;
+  --line: #e3e5ea;
+  --accent: #1f4e79;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(247, 246, 244, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+.brand__title {
+  font-weight: 800;
+}
+.brand__subtitle {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn-secondary {
+  color: var(--ink);
+}
+
+.hero {
+  padding: 22px 0 10px;
+}
+.title {
+  margin: 0 0 10px;
+  font-size: 34px;
+  line-height: 1.15;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.lead {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.viewer {
+  margin: 16px 0 26px;
+}
+.figure {
+  margin: 0;
+}
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.caption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 16px 0;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.muted {
+  color: var(--muted);
+  margin: 0;
+}
+.small {
+  font-size: 12px;
+}
+
+.image-stage {
+  position: relative;
+}
+
+.hotspot {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 2px solid rgba(156, 216, 15, 0.95);
+  background: var(--accent);
+  color: #f51515;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.hotspot:focus {
+  outline: 3px solid rgba(238, 43, 163, 0.35);
+  outline-offset: 2px;
+}
