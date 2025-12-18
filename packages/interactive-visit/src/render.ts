@@ -54,6 +54,8 @@ function clamp01(n: number): number {
 export function render(project: VisitProject, viewId: string): void {
   const view = findView(project, viewId);
 
+  renderBackLink(view);
+
   setText("view-title", view.title);
   setText("view-text", view.text);
 
@@ -72,4 +74,17 @@ export function render(project: VisitProject, viewId: string): void {
   }
 
   document.title = `${view.title} — Manoir de la Chevallerie`;
+}
+
+function renderBackLink(view: ViewNode): void {
+  const back = getEl<HTMLAnchorElement>("back-link");
+
+  if (!view.backId) {
+    back.style.display = "none";
+    back.href = "#";
+    return;
+  }
+
+  back.style.display = "inline-flex";
+  back.href = `#${view.backId}`;
 }

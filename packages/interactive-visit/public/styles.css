@@ -143,3 +143,10 @@ body {
   outline: 3px solid rgba(238, 43, 163, 0.35);
   outline-offset: 2px;
 }
+
+.view-nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 8px 0 12px;
+}
