@@ -1,0 +1,86 @@
+import type { VisitProject } from "../model.js";
+
+export const chemineeProject: VisitProject = {
+  projectTitle: "Visite interactive — Manoir de la Chevallerie",
+  footerText:
+    "Visite interactive autonome — Manoir de la Chevallerie. Mise à jour au fil des restaurations.",
+  startViewId: "scene-cheminee",
+  views: [
+    {
+      id: "scene-cheminee",
+      title: "Vue d’ensemble",
+      text: "Cliquez sur les points d’intérêt pour ouvrir un détail et sa notice.",
+      image: "./assets/cheminee/scene-cheminee.jpg",
+      imageAlt: "Vue d’ensemble (photo de travail)",
+      caption: "Vue d’ensemble — points d’intérêt cliquables.",
+      hotspots: [
+        {
+          x: 0.25,
+          y: 0.35,
+          label: "Détail : cheminée",
+          targetId: "detail-cheminee",
+        },
+        {
+          x: 0.76,
+          y: 0.54,
+          label: "Détail : oculus",
+          targetId: "detail-oculus",
+        },
+      ],
+    },
+    {
+      id: "detail-cheminee",
+      title: "Détail — Cheminée",
+      text: "Notice courte : datation, éléments remarquables, et état de conservation (texte factuel).",
+      image: "./assets/cheminee/detail-cheminee.jpg",
+      imageAlt: "Détail de la cheminée",
+      caption: "Cheminée — détail.",
+      backId: "scene-cheminee",
+      hotspots: [
+        {
+          x: 0.53,
+          y: 0.27,
+          label: "Détail : blason",
+          targetId: "detail-blason",
+        },
+        {
+          x: 0.68,
+          y: 0.7,
+          label: "Détail : jambage droit",
+          targetId: "detail-jambage-droit",
+        },
+      ],
+    },
+    {
+      id: "detail-blason",
+      title: "Détail — Blason",
+      text: "Notice courte : description de l’armoirie, emplacement, lecture, et observations (texte factuel).",
+      image: "./assets/cheminee/detail-blason.jpg",
+      imageAlt: "Détail du blason",
+      caption: "Blason — détail.",
+      backId: "detail-cheminee",
+      hotspots: [],
+    },
+    {
+      id: "detail-jambage-droit",
+      title: "Détail — Jambage droit",
+      text: "Notice courte : description du jambage,  , emplacement, lecture, et observations (texte factuel).",
+      image: "./assets/cheminee/detail-jambage-droit.jpg",
+      imageAlt: "Détail du jambage droit",
+      caption: "Jamabage droit — détail.",
+      backId: "detail-cheminee",
+      hotspots: [],
+    },
+
+    {
+      id: "detail-oculus",
+      title: "Détail — Oculus",
+      text: "Notice courte : fonction, lecture architecturale, et points d’attention (texte factuel).",
+      image: "./assets/cheminee/detail-oculus.jpg",
+      imageAlt: "Détail de l’oculus",
+      caption: "Oculus — détail.",
+      backId: "scene-cheminee",
+      hotspots: [],
+    },
+  ],
+};

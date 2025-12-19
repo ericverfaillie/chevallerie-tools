@@ -43,9 +43,55 @@ function clamp01(n) {
         return 0;
     return Math.min(1, Math.max(0, n));
 }
+function renderBreadcrumbs(view) {
+    const bc = getEl("breadcrumbs");
+    if (!view.backId) {
+        bc.textContent = "Accueil de la visite";
+        return;
+    }
+    // V1 minimal : "Accueil > Vue actuelle"
+    bc.innerHTML = `<a href="#${view.backId}">Retour</a> &nbsp;›&nbsp; <span>${view.title}</span>`;
+}
+function renderPoiList(view) {
+    const ul = getEl("poi-list");
+    ul.innerHTML = "";
+    const hint = getEl("poi-hint");
+    if (!view.hotspots || view.hotspots.length === 0) {
+        hint.textContent = "Aucun point d’intérêt sur cette vue.";
+        return;
+    }
+    hint.textContent = `${view.hotspots.length} point(s) cliquable(s)`;
+    for (const hs of view.hotspots) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = `#${hs.targetId}`;
+        a.textContent = hs.label;
+        li.appendChild(a);
+        ul.appendChild(li);
+    }
+}
+function applyTransition() {
+    const stage = getEl("image-stage");
+    stage.classList.remove("fade-in");
+    // force reflow pour relancer l'animation
+    void stage.offsetWidth;
+    stage.classList.add("fade-in");
+}
+function preloadTargets(view, project) {
+    // précharge les images des vues cibles (simple, sans promesse)
+    const targets = view.hotspots.map((h) => h.targetId);
+    for (const id of targets) {
+        const v = project.views.find((x) => x.id === id);
+        if (!v)
+            continue;
+        const img = new Image();
+        img.src = v.image;
+    }
+}
 export function render(project, viewId) {
     const view = findView(project, viewId);
     renderBackLink(view);
+    renderBreadcrumbs(view);
     setText("view-title", view.title);
     setText("view-text", view.text);
     const img = getEl("view-image");
@@ -58,6 +104,9 @@ export function render(project, viewId) {
     for (const hs of view.hotspots) {
         addHotspot(stage, hs);
     }
+    renderPoiList(view);
+    applyTransition();
+    preloadTargets(view, project);
     document.title = `${view.title} — Manoir de la Chevallerie`;
 }
 function renderBackLink(view) {

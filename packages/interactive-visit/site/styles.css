@@ -150,3 +150,59 @@ body {
   gap: 10px;
   margin: 8px 0 12px;
 }
+
+.breadcrumbs {
+  margin: 6px 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.breadcrumbs a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.poi {
+  margin: 14px 0 26px;
+  padding: 14px 16px;
+}
+.poi-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.poi-title {
+  font-weight: 800;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.poi-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.poi-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.poi-list a:hover {
+  text-decoration: underline;
+}
+
+/* Transition légère à chaque changement de vue */
+.fade-in {
+  animation: fadeIn 160ms ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0.35;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

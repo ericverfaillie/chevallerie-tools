@@ -51,10 +51,64 @@ function clamp01(n: number): number {
   return Math.min(1, Math.max(0, n));
 }
 
+function renderBreadcrumbs(view: ViewNode): void {
+  const bc = getEl<HTMLDivElement>("breadcrumbs");
+
+  if (!view.backId) {
+    bc.textContent = "Accueil de la visite";
+    return;
+  }
+
+  // V1 minimal : "Accueil > Vue actuelle"
+  bc.innerHTML = `<a href="#${view.backId}">Retour</a> &nbsp;›&nbsp; <span>${view.title}</span>`;
+}
+
+function renderPoiList(view: ViewNode): void {
+  const ul = getEl<HTMLUListElement>("poi-list");
+  ul.innerHTML = "";
+
+  const hint = getEl<HTMLDivElement>("poi-hint");
+
+  if (!view.hotspots || view.hotspots.length === 0) {
+    hint.textContent = "Aucun point d’intérêt sur cette vue.";
+    return;
+  }
+
+  hint.textContent = `${view.hotspots.length} point(s) cliquable(s)`;
+  for (const hs of view.hotspots) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = `#${hs.targetId}`;
+    a.textContent = hs.label;
+    li.appendChild(a);
+    ul.appendChild(li);
+  }
+}
+
+function applyTransition(): void {
+  const stage = getEl<HTMLDivElement>("image-stage");
+  stage.classList.remove("fade-in");
+  // force reflow pour relancer l'animation
+  void stage.offsetWidth;
+  stage.classList.add("fade-in");
+}
+
+function preloadTargets(view: ViewNode, project: VisitProject): void {
+  // précharge les images des vues cibles (simple, sans promesse)
+  const targets = view.hotspots.map((h) => h.targetId);
+  for (const id of targets) {
+    const v = project.views.find((x) => x.id === id);
+    if (!v) continue;
+    const img = new Image();
+    img.src = v.image;
+  }
+}
+
 export function render(project: VisitProject, viewId: string): void {
   const view = findView(project, viewId);
 
   renderBackLink(view);
+  renderBreadcrumbs(view);
 
   setText("view-title", view.title);
   setText("view-text", view.text);
@@ -72,6 +126,10 @@ export function render(project: VisitProject, viewId: string): void {
   for (const hs of view.hotspots) {
     addHotspot(stage, hs);
   }
+
+  renderPoiList(view);
+  applyTransition();
+  preloadTargets(view, project);
 
   document.title = `${view.title} — Manoir de la Chevallerie`;
 }

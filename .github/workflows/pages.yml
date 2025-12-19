@@ -39,6 +39,8 @@ jobs:
       # 4. Build de toutes les pages (multi-packages)
       - name: Build all pages
         run: npm run pages:build
+        env:
+          IZI_API_KEY: ${{ secrets.IZI_API_KEY }}
 
       # 5. Upload de l’artefact GitHub Pages
       - name: Upload Pages artifact
