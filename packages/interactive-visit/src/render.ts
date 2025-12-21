@@ -23,7 +23,7 @@ function clearHotspots(stage: HTMLElement): void {
   }
 }
 
-function addHotspot(stage: HTMLElement, hs: Hotspot): void {
+function addHotspot(stage: HTMLElement, hs: Hotspot, projectId: string): void {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = "hotspot";
@@ -39,7 +39,7 @@ function addHotspot(stage: HTMLElement, hs: Hotspot): void {
   btn.setAttribute("aria-label", hs.label);
 
   btn.addEventListener("click", () => {
-    window.location.hash = `#${hs.targetId}`;
+    window.location.hash = `#${projectId}:${hs.targetId}`;
   });
 
   stage.appendChild(btn);
@@ -63,7 +63,7 @@ function renderBreadcrumbs(view: ViewNode): void {
   bc.innerHTML = `<a href="#${view.backId}">Retour</a> &nbsp;›&nbsp; <span>${view.title}</span>`;
 }
 
-function renderPoiList(view: ViewNode): void {
+function renderPoiList(view: ViewNode, projectId: string): void {
   const ul = getEl<HTMLUListElement>("poi-list");
   ul.innerHTML = "";
 
@@ -78,7 +78,7 @@ function renderPoiList(view: ViewNode): void {
   for (const hs of view.hotspots) {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = `#${hs.targetId}`;
+    a.href = `#${projectId}:${hs.targetId}`;
     a.textContent = hs.label;
     li.appendChild(a);
     ul.appendChild(li);
@@ -104,10 +104,14 @@ function preloadTargets(view: ViewNode, project: VisitProject): void {
   }
 }
 
-export function render(project: VisitProject, viewId: string): void {
+export function render(
+  project: VisitProject,
+  viewId: string,
+  projectId: string
+): void {
   const view = findView(project, viewId);
 
-  renderBackLink(view);
+  renderBackLink(view, projectId);
   renderBreadcrumbs(view);
 
   setText("view-title", view.title);
@@ -124,17 +128,17 @@ export function render(project: VisitProject, viewId: string): void {
   clearHotspots(stage);
 
   for (const hs of view.hotspots) {
-    addHotspot(stage, hs);
+    addHotspot(stage, hs, projectId);
   }
 
-  renderPoiList(view);
+  renderPoiList(view, projectId);
   applyTransition();
   preloadTargets(view, project);
 
   document.title = `${view.title} — Manoir de la Chevallerie`;
 }
 
-function renderBackLink(view: ViewNode): void {
+function renderBackLink(view: ViewNode, projectId: string): void {
   const back = getEl<HTMLAnchorElement>("back-link");
 
   if (!view.backId) {
@@ -144,5 +148,5 @@ function renderBackLink(view: ViewNode): void {
   }
 
   back.style.display = "inline-flex";
-  back.href = `#${view.backId}`;
+  back.href = `#${projectId}:${view.backId}`;
 }

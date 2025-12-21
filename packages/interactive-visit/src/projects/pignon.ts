@@ -4,10 +4,10 @@ export const pignonProject: VisitProject = {
   projectTitle: "Visite interactive — Manoir de la Chevallerie",
   footerText:
     "Visite interactive autonome — Manoir de la Chevallerie. Mise à jour au fil des restaurations.",
-  startViewId: "scene-cheminee",
+  startViewId: "scene-pignon",
   views: [
     {
-      id: "scene-cheminee",
+      id: "scene-pignon",
       title: "Vue d’ensemble",
       text: "Cliquez sur les points d’intérêt pour ouvrir un détail et sa notice.",
       image: "./assets/pignon/scene-pignon.jpg",
@@ -15,8 +15,8 @@ export const pignonProject: VisitProject = {
       caption: "Vue d’ensemble — points d’intérêt cliquables.",
       hotspots: [
         {
-          x: 0.55,
-          y: 0.55,
+          x: 0.5,
+          y: 0.6,
           label: "Détail : four à pain",
           targetId: "detail-four-a-pain",
         },
