@@ -24,17 +24,39 @@
 
     <main class="container">
       <section id="home" class="home" style="display: none">
-        <h1 class="title">Visites et chantiers</h1>
-        <p class="lead">
-          Sélectionnez un chantier pour ouvrir la visite interactive.
-        </p>
-        <div id="home-grid" class="home-grid"></div>
-        <div class="home-actions">
-          <a id="resume-link" class="btn" href="#" style="display: none"
-            >Reprendre la visite</a
-          >
-        </div>
+        <header class="home-hero card">
+          <figure class="home-hero__figure">
+            <img
+              class="home-hero__img"
+              src="./assets/home/cover.jpg"
+              alt="Manoir de la Chevallerie — vue d’ensemble"
+              loading="lazy"
+            />
+            <figcaption class="home-hero__caption">
+              Manoir de la Chevallerie — repères de visite et chantiers en
+              cours.
+            </figcaption>
+          </figure>
+
+          <div class="home-hero__body">
+            <h1 class="title">Visites et chantiers</h1>
+            <p class="lead">
+              Parcours interactifs, notices factuelles, et points d’intérêt. La
+              présentation privilégie une lecture patrimoniale (sans ton
+              promotionnel) et s’enrichit au fil des travaux.
+            </p>
+
+            <div class="home-actions">
+              <a id="resume-link" class="btn" href="#" style="display: none"
+                >Reprendre la visite</a
+              >
+            </div>
+          </div>
+        </header>
+
+        <div class="home-grid" id="home-grid"></div>
       </section>
+
       <section id="viewer" style="display: block">
         <section class="hero">
           <h1 id="view-title" class="title"></h1>
@@ -70,6 +92,21 @@
               <!-- Hotspots injectés ici -->
             </div>
             <figcaption id="view-caption" class="caption"></figcaption>
+            <section class="notice card" aria-label="Notice">
+              <div class="notice-body">
+                <h2 class="notice-title" id="notice-title"></h2>
+                <p class="notice-text" id="notice-text"></p>
+
+                <div id="audio-block" class="audio" style="display: none">
+                  <div class="audio-title" id="audio-title"></div>
+                  <audio id="audio-player" controls preload="none"></audio>
+                  <p class="muted small audio-note" id="audio-note">
+                    Enregistrements et contenus sonores : intégration prévue
+                    (source externe).
+                  </p>
+                </div>
+              </div>
+            </section>
           </figure>
         </section>
       </section>

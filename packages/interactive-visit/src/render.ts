@@ -116,6 +116,9 @@ export function render(
 
   setText("view-title", view.title);
   setText("view-text", view.text);
+  setHtmlText("notice-title", view.title);
+  setHtmlText("notice-text", view.text);
+  renderAudio(view);
 
   const img = getEl<HTMLImageElement>("view-image");
   img.src = view.image;
@@ -149,4 +152,26 @@ function renderBackLink(view: ViewNode, projectId: string): void {
 
   back.style.display = "inline-flex";
   back.href = `#${projectId}:${view.backId}`;
+}
+
+function setHtmlText(id: string, value: string): void {
+  getEl(id).textContent = value;
+}
+
+function renderAudio(view: ViewNode): void {
+  const block = getEl<HTMLDivElement>("audio-block");
+  const title = getEl<HTMLDivElement>("audio-title");
+  const player = getEl<HTMLAudioElement>("audio-player");
+
+  if (!view.audioSrc) {
+    block.style.display = "none";
+    player.removeAttribute("src");
+    player.load();
+    title.textContent = "";
+    return;
+  }
+
+  block.style.display = "block";
+  title.textContent = view.audioTitle ?? "Écouter";
+  player.src = view.audioSrc;
 }

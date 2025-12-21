@@ -15,6 +15,8 @@ export const catalog: Array<{
   subtitle: string;
   coverImage: string; // chemin public/
   coverAlt: string;
+  caption?: string;
+  status?: string;
 }> = [
   {
     id: "pignon",
@@ -22,6 +24,8 @@ export const catalog: Array<{
     subtitle: "Maçonneries, reprises et lecture d’ensemble.",
     coverImage: "./assets/pignon/scene-pignon.jpg",
     coverAlt: "Pignon — vue d’ensemble",
+    caption: "Vue de référence — localisation des désordres et interventions.",
+    status: "En cours",
   },
   {
     id: "cheminee",
@@ -29,6 +33,8 @@ export const catalog: Array<{
     subtitle: "Foyer, décor, blason et détails sculptés.",
     coverImage: "./assets/cheminee/scene-cheminee.jpg",
     coverAlt: "Cheminée — vue d’ensemble",
+    caption: "Vue de référence — localisation des désordres et interventions.",
+    status: "En cours",
   },
 ];
 

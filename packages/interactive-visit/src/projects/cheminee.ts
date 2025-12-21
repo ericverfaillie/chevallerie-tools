@@ -81,6 +81,8 @@ export const chemineeProject: VisitProject = {
       caption: "Oculus — détail.",
       backId: "scene-cheminee",
       hotspots: [],
+      audioTitle: "Notice audio — Cheminée",
+      audioSrc: "./assets/audio/cheminee-notice.mp3",
     },
   ],
 };

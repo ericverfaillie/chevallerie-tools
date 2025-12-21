@@ -94,6 +94,9 @@ export function render(project, viewId, projectId) {
     renderBreadcrumbs(view);
     setText("view-title", view.title);
     setText("view-text", view.text);
+    setHtmlText("notice-title", view.title);
+    setHtmlText("notice-text", view.text);
+    renderAudio(view);
     const img = getEl("view-image");
     img.src = view.image;
     img.alt = view.imageAlt;
@@ -118,4 +121,22 @@ function renderBackLink(view, projectId) {
     }
     back.style.display = "inline-flex";
     back.href = `#${projectId}:${view.backId}`;
+}
+function setHtmlText(id, value) {
+    getEl(id).textContent = value;
+}
+function renderAudio(view) {
+    const block = getEl("audio-block");
+    const title = getEl("audio-title");
+    const player = getEl("audio-player");
+    if (!view.audioSrc) {
+        block.style.display = "none";
+        player.removeAttribute("src");
+        player.load();
+        title.textContent = "";
+        return;
+    }
+    block.style.display = "block";
+    title.textContent = view.audioTitle ?? "Écouter";
+    player.src = view.audioSrc;
 }

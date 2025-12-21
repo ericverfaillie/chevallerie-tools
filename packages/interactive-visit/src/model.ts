@@ -16,6 +16,10 @@ export interface ViewNode {
 
   hotspots: Hotspot[];
   backId?: string; // optionnel (B3)
+
+  // Préparation audio (à brancher plus tard sur izi)
+  audioSrc?: string; // ex: "./assets/audio/cheminee.m4a" ou URL media.izi.travel
+  audioTitle?: string; // titre court (optionnel)
 }
 
 export interface VisitProject {

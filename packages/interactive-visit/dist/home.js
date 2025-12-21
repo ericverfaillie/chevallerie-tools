@@ -27,6 +27,10 @@ export function renderHome() {
       <div class="card-body">
         <h2 class="card-title">${p.title}</h2>
         <p class="card-subtitle">${p.subtitle}</p>
+        ${p.status
+            ? `<p class="card-meta"><strong>${p.status}</strong></p>`
+            : ""}
+        ${p.caption ? `<p class="card-caption">${p.caption}</p>` : ""}
       </div>
     `;
         grid.appendChild(a);

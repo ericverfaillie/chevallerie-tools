@@ -11,6 +11,8 @@ export const catalog = [
         subtitle: "Maçonneries, reprises et lecture d’ensemble.",
         coverImage: "./assets/pignon/scene-pignon.jpg",
         coverAlt: "Pignon — vue d’ensemble",
+        caption: "Vue de référence — localisation des désordres et interventions.",
+        status: "En cours",
     },
     {
         id: "cheminee",
@@ -18,6 +20,8 @@ export const catalog = [
         subtitle: "Foyer, décor, blason et détails sculptés.",
         coverImage: "./assets/cheminee/scene-cheminee.jpg",
         coverAlt: "Cheminée — vue d’ensemble",
+        caption: "Vue de référence — localisation des désordres et interventions.",
+        status: "En cours",
     },
 ];
 export const defaultProjectId = catalog[0]?.id ?? "pignon";
