@@ -9,7 +9,7 @@ export const visitProject: VisitProject = {
     {
       id: "scene-1",
       title: "Vue d’ensemble",
-      text: "Cliquez sur les points d’intérêt pour ouvrir un détail et sa notice.",
+      lead: "Cliquez sur les points d’intérêt pour ouvrir un détail et sa notice.",
       image: "./assets/scene-1.jpg",
       imageAlt: "Vue d’ensemble (photo de travail)",
       caption: "Vue d’ensemble — points d’intérêt cliquables.",
@@ -31,7 +31,7 @@ export const visitProject: VisitProject = {
     {
       id: "detail-cheminee",
       title: "Détail — Cheminée",
-      text: "Notice courte : datation, éléments remarquables, et état de conservation (texte factuel).",
+      lead: "Notice courte : datation, éléments remarquables, et état de conservation (texte factuel).",
       image: "./assets/detail-cheminee.jpg",
       imageAlt: "Détail de la cheminée",
       caption: "Cheminée — détail.",
@@ -54,7 +54,7 @@ export const visitProject: VisitProject = {
     {
       id: "detail-blason",
       title: "Détail — Blason",
-      text: "Notice courte : description de l’armoirie, emplacement, lecture, et observations (texte factuel).",
+      lead: "Notice courte : description de l’armoirie, emplacement, lecture, et observations (texte factuel).",
       image: "./assets/detail-blason.jpg",
       imageAlt: "Détail du blason",
       caption: "Blason — détail.",
@@ -64,7 +64,7 @@ export const visitProject: VisitProject = {
     {
       id: "detail-jambage-droit",
       title: "Détail — Jambage droit",
-      text: "Notice courte : description du jambage,  , emplacement, lecture, et observations (texte factuel).",
+      lead: "Notice courte : description du jambage,  , emplacement, lecture, et observations (texte factuel).",
       image: "./assets/detail-jambage-droit.jpg",
       imageAlt: "Détail du jambage droit",
       caption: "Jamabage droit — détail.",
@@ -75,7 +75,7 @@ export const visitProject: VisitProject = {
     {
       id: "detail-oculus",
       title: "Détail — Oculus",
-      text: "Notice courte : fonction, lecture architecturale, et points d’attention (texte factuel).",
+      lead: "Notice courte : fonction, lecture architecturale, et points d’attention (texte factuel).",
       image: "./assets/detail-oculus.jpg",
       imageAlt: "Détail de l’oculus",
       caption: "Oculus — détail.",

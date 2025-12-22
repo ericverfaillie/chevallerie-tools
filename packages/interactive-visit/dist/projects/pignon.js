@@ -6,7 +6,7 @@ export const pignonProject = {
         {
             id: "scene-pignon",
             title: "Vue d’ensemble",
-            text: "Cliquez sur les points d’intérêt pour ouvrir un détail et sa notice.",
+            lead: "Cliquez sur les points d’intérêt pour ouvrir un détail et sa notice.",
             image: "./assets/pignon/scene-pignon.jpg",
             imageAlt: "Vue d’ensemble (photo de travail)",
             caption: "Vue d’ensemble — points d’intérêt cliquables.",
@@ -28,7 +28,7 @@ export const pignonProject = {
         {
             id: "detail-four-a-pain",
             title: "Détail : four à pain",
-            text: "Notice courte : datation, éléments remarquables, et état de conservation (texte factuel).",
+            lead: "Notice courte : datation, éléments remarquables, et état de conservation (texte factuel).",
             image: "./assets/pignon/detail-four-a-pain.jpg",
             imageAlt: "Détail : four à pain",
             caption: "Four à pain — détail.",
@@ -51,7 +51,7 @@ export const pignonProject = {
         {
             id: "detail-four-apres-travaux",
             title: "Détail : four à pain après travaux",
-            text: "Notice courte : description de l’armoirie, emplacement, lecture, et observations (texte factuel).",
+            lead: "Notice courte : description de l’armoirie, emplacement, lecture, et observations (texte factuel).",
             image: "./assets/pignon/detail-blason.jpg",
             imageAlt: "Détail : four à pain après travaux",
             caption: "Détail : four à pain après travaux",
@@ -61,7 +61,7 @@ export const pignonProject = {
         {
             id: "detail-four-avant-travaux",
             title: "Détail : four à pain avant travaux",
-            text: "Notice courte : description du jambage,  , emplacement, lecture, et observations (texte factuel).",
+            lead: "Notice courte : description du jambage,  , emplacement, lecture, et observations (texte factuel).",
             image: "./assets/pignon/detail-jambage-droit.jpg",
             imageAlt: "Détail : four à pain avant travaux",
             caption: "Détail : four à pain avant travaux",
@@ -71,7 +71,7 @@ export const pignonProject = {
         {
             id: "detail-fenetre-fermee",
             title: "fenêtre fermée",
-            text: "Notice courte : fonction, lecture architecturale, et points d’attention (texte factuel).",
+            lead: "Notice courte : fonction, lecture architecturale, et points d’attention (texte factuel).",
             image: "./assets/pignon/fenetre-fermee.jpg",
             imageAlt: "Détail de l’oculus",
             caption: "fenêtre fermée",

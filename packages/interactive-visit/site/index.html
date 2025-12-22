@@ -82,6 +82,14 @@
 
         <section class="viewer card">
           <figure class="figure">
+            <div id="audio-block" class="audio" style="display: none">
+              <div class="audio-title" id="audio-title"></div>
+              <audio id="audio-player" controls preload="none"></audio>
+              <p class="muted small audio-note" id="audio-note">
+                Enregistrements et contenus sonores : intégration prévue (source
+                externe).
+              </p>
+            </div>
             <div class="image-stage" id="image-stage">
               <img
                 id="view-image"
@@ -95,16 +103,9 @@
             <section class="notice card" aria-label="Notice">
               <div class="notice-body">
                 <h2 class="notice-title" id="notice-title"></h2>
-                <p class="notice-text" id="notice-text"></p>
+                <p class="notice-lead" id="notice-lead"></p>
 
-                <div id="audio-block" class="audio" style="display: none">
-                  <div class="audio-title" id="audio-title"></div>
-                  <audio id="audio-player" controls preload="none"></audio>
-                  <p class="muted small audio-note" id="audio-note">
-                    Enregistrements et contenus sonores : intégration prévue
-                    (source externe).
-                  </p>
-                </div>
+                <div id="notice-sections"></div>
               </div>
             </section>
           </figure>

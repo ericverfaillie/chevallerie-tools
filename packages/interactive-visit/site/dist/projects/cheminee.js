@@ -6,7 +6,7 @@ export const chemineeProject = {
         {
             id: "scene-cheminee",
             title: "Vue d’ensemble",
-            text: "Cliquez sur les points d’intérêt pour ouvrir un détail et sa notice.",
+            lead: "Cliquez sur les points d’intérêt pour ouvrir un détail et sa notice.",
             image: "./assets/cheminee/scene-cheminee.jpg",
             imageAlt: "Vue d’ensemble (photo de travail)",
             caption: "Vue d’ensemble — points d’intérêt cliquables.",
@@ -28,7 +28,7 @@ export const chemineeProject = {
         {
             id: "detail-cheminee",
             title: "Détail — Cheminée",
-            text: "Notice courte : datation, éléments remarquables, et état de conservation (texte factuel).",
+            lead: "Notice courte : datation, éléments remarquables, et état de conservation (texte factuel).",
             image: "./assets/cheminee/detail-cheminee.jpg",
             imageAlt: "Détail de la cheminée",
             caption: "Cheminée — détail.",
@@ -47,11 +47,25 @@ export const chemineeProject = {
                     targetId: "detail-jambage-droit",
                 },
             ],
+            notice: {
+                datation: "Datation estimée : milieu du XVIᵉ siècle. Les caractéristiques observées sont compatibles avec cette période.",
+                etatInitial: "À l’acquisition, l’ensemble présentait un état hétérogène : encrassements, pertes de matière et reprises anciennes non documentées, affectant la lisibilité.",
+                etatActuel: "À ce jour, la cheminée est dégagée, stabilisée et observable. Certaines fragilités ponctuelles subsistent et font l’objet d’un suivi.",
+                travauxEffectues: "Nettoyage manuel, dépose d’éléments parasites, reprises limitées visant la stabilisation et la compréhension des volumes.",
+                travauxAVenir: "Investigations complémentaires envisagées afin de documenter certains états et évaluer d’éventuelles interventions conservatoires. Aucune opération lourde n’est programmée à ce stade.",
+                intervention: "Approche conservatoire privilégiant réversibilité, lisibilité des états successifs et documentation.",
+                blogLinks: [
+                    {
+                        label: "Article détaillé : Restauration de la cheminée",
+                        url: "https://votre-blog/...",
+                    },
+                ],
+            },
         },
         {
             id: "detail-blason",
             title: "Détail — Blason",
-            text: "Notice courte : description de l’armoirie, emplacement, lecture, et observations (texte factuel).",
+            lead: "Notice courte : description de l’armoirie, emplacement, lecture, et observations (texte factuel).",
             image: "./assets/cheminee/detail-blason.jpg",
             imageAlt: "Détail du blason",
             caption: "Blason — détail.",
@@ -61,7 +75,7 @@ export const chemineeProject = {
         {
             id: "detail-jambage-droit",
             title: "Détail — Jambage droit",
-            text: "Notice courte : description du jambage,  , emplacement, lecture, et observations (texte factuel).",
+            lead: "Notice courte : description du jambage,  , emplacement, lecture, et observations (texte factuel).",
             image: "./assets/cheminee/detail-jambage-droit.jpg",
             imageAlt: "Détail du jambage droit",
             caption: "Jamabage droit — détail.",
@@ -71,7 +85,7 @@ export const chemineeProject = {
         {
             id: "detail-oculus",
             title: "Détail — Oculus",
-            text: "Notice courte : fonction, lecture architecturale, et points d’attention (texte factuel).",
+            lead: "Notice courte : fonction, lecture architecturale, et points d’attention (texte factuel).",
             image: "./assets/cheminee/detail-oculus.jpg",
             imageAlt: "Détail de l’oculus",
             caption: "Oculus — détail.",
@@ -79,6 +93,24 @@ export const chemineeProject = {
             hotspots: [],
             audioTitle: "Notice audio — Cheminée",
             audioSrc: "./assets/audio/cheminee-notice.mp3",
+            notice: {
+                datation: "Datation estimée : milieu du XVIᵉ siècle. Les caractéristiques observées sont compatibles avec cette période.",
+                etatInitial: "À l’acquisition, l’ensemble présentait un état hétérogène : encrassements, pertes de matière et reprises anciennes non documentées, affectant la lisibilité.",
+                etatActuel: "À ce jour, la cheminée est dégagée, stabilisée et observable. Certaines fragilités ponctuelles subsistent et font l’objet d’un suivi.",
+                travauxEffectues: "Nettoyage manuel, dépose d’éléments parasites, reprises limitées visant la stabilisation et la compréhension des volumes.",
+                travauxAVenir: "Investigations complémentaires envisagées afin de documenter certains états et évaluer d’éventuelles interventions conservatoires. Aucune opération lourde n’est programmée à ce stade.",
+                intervention: "Approche conservatoire privilégiant réversibilité, lisibilité des états successifs et documentation.",
+                blogLinks: [
+                    {
+                        label: "Article détaillé : Restauration de la cheminée",
+                        url: "https://manoirdelachevallerie.fr/2025/11/29/chambre-du-xvieme-de-laile-est-chantier-09-restauration-de-la-cheminee/",
+                    },
+                    {
+                        label: "Article détaillé : Restauration de la cheminée",
+                        url: "https://manoirdelachevallerie.fr/2025/11/29/chambre-du-xvieme-de-laile-est-chantier-09-restauration-de-la-cheminee/",
+                    },
+                ],
+            },
         },
     ],
 };

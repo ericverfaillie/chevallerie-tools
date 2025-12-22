@@ -92,11 +92,12 @@ export function render(project, viewId, projectId) {
     const view = findView(project, viewId);
     renderBackLink(view, projectId);
     renderBreadcrumbs(view);
-    setText("view-title", view.title);
-    setText("view-text", view.text);
-    setHtmlText("notice-title", view.title);
-    setHtmlText("notice-text", view.text);
     renderAudio(view);
+    //setText("view-title", view.title);
+    //setText("view-text", view.text);
+    //setHtmlText("notice-title", view.title);
+    //setHtmlText("notice-text", view.text);
+    renderNotice(view);
     const img = getEl("view-image");
     img.src = view.image;
     img.alt = view.imageAlt;
@@ -139,4 +140,69 @@ function renderAudio(view) {
     block.style.display = "block";
     title.textContent = view.audioTitle ?? "Écouter";
     player.src = view.audioSrc;
+}
+function renderNoticeLinks(links) {
+    const ul = document.createElement("ul");
+    ul.className = "notice-links";
+    for (const l of links) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = l.url;
+        a.textContent = l.label;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        li.appendChild(a);
+        ul.appendChild(li);
+    }
+    return ul;
+}
+function addNoticeSection(container, title, text) {
+    const s = document.createElement("section");
+    s.className = "notice-section";
+    const h = document.createElement("h3");
+    h.className = "notice-section__title";
+    h.textContent = title;
+    const p = document.createElement("p");
+    p.className = "notice-section__text";
+    p.textContent = text;
+    s.appendChild(h);
+    s.appendChild(p);
+    container.appendChild(s);
+}
+function clear(el) {
+    el.innerHTML = "";
+}
+function renderNotice(view) {
+    const titleEl = getEl("notice-title");
+    const leadEl = getEl("notice-lead");
+    const sections = getEl("notice-sections");
+    titleEl.textContent = view.title;
+    leadEl.textContent = view.lead ?? "";
+    clear(sections);
+    const n = view.notice;
+    if (!n)
+        return;
+    // Ordre figé et homogène
+    if (n.datation)
+        addNoticeSection(sections, "Datation", n.datation);
+    if (n.etatInitial)
+        addNoticeSection(sections, "État des lieux à l’achat", n.etatInitial);
+    if (n.etatActuel)
+        addNoticeSection(sections, "État actuel", n.etatActuel);
+    if (n.travauxEffectues)
+        addNoticeSection(sections, "Travaux effectués", n.travauxEffectues);
+    if (n.travauxAVenir)
+        addNoticeSection(sections, "Travaux à venir", n.travauxAVenir);
+    if (n.intervention)
+        addNoticeSection(sections, "Intervention", n.intervention);
+    if (n.blogLinks && n.blogLinks.length > 0) {
+        const s = document.createElement("section");
+        s.className = "notice-section";
+        const h = document.createElement("h3");
+        h.className = "notice-section__title";
+        h.textContent = "Pour aller plus loin";
+        s.appendChild(h);
+        s.appendChild(renderNoticeLinks(n.blogLinks));
+        sections.appendChild(s);
+    }
 }
